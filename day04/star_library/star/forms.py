@@ -20,3 +20,11 @@ class RegisterForm(forms.Form):
         if user:
             raise forms.ValidationError("该邮箱已被注册")
         return email
+
+
+class LoginForm(forms.Form):
+    # 校验用户名或者邮箱
+    username = forms.CharField(required=True, min_length=2, max_length=20)
+    # 校验密码
+    password = forms.CharField(required=True, min_length=6)
+

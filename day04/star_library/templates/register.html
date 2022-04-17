@@ -28,9 +28,12 @@
                     <input type="password" placeholder="密码" class="input" name="password" />
                 </label>
                 <div class="error_msg">
-                    <!-- 判断是否有msg-->
-
                     <!-- 判断是否有登录表单验证信息-->
+                    {% if register_post_form.erros %}
+                        {% for key, error in register_post_form.errors.items %}
+                            {{ error }}
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <button class="btn">注册</button>
             </form>
@@ -41,7 +44,7 @@
             <div class="overlay">
                 <div class="overlay__panel overlay--left">
                     <!-- 连接到注册页面-->
-                    <a class="btn" id="signIn" href="#">登录</a>
+                    <a class="btn" id="signIn" href="{% url 'star:login' %}">登录</a>
                 </div>
             </div>
         </div>

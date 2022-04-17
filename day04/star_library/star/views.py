@@ -2,11 +2,14 @@
 from django.shortcuts import render
 from django.views.generic.base import View
 from django.contrib import messages
-from django.contrib.auth import login
+from django.contrib.auth.backends import ModelBackend
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.db.models import Q
 
-from .forms import SearchForm
+from .forms import SearchForm, LoginForm
 from .models import Star
 from .models import Star, UserPro
 
@@ -60,3 +63,34 @@ class RegisterView(View):
             return render(request, "register.html", {
                 "register_post_form": register_form
             })
+
+
+# 自定义用户校验方法
+class CustomAuth(ModelBackend):
+    def authenticate(self, request, username=None, password=None, **kwargs):
+        try:
+            user = UserPro.objects.get(Q(username=username) | Q(nickname=username) | Q(email=username))
+            is_valid = user.check_password(password)
+            return user if is_valid else None
+        except:
+            pass
+
+
+class LoginView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "login.html")
+
+    def post(self, request, *args, **kwargs):
+        login_form = LoginForm(request.POST)
+        if login_form.is_valid():
+            username = login_form.cleaned_data["username"]
+            password = login_form.cleaned_data["password"]
+            # 使用django提交检验方式
+            authenticate(username, password)
+
+
+class LogoutView(View):
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return HttpResponseRedirect(reverse("star:logout"))  # 待修改
+

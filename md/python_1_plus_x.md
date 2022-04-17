@@ -260,13 +260,19 @@ forms.py
 
 ### 进度
 
-2：00-15：18：讲到用户注册，并演示成功。修改index.html，新增class RegisterView(View)，
+14：00-15：18：讲到用户注册，并演示成功。修改index.html，新增class RegisterView(View)，
+
+15：28-16：24：用户登录。
+
+
 
 
 
 ### 操作
 
 #### 搜索操作
+
+http://127.0.0.1:8000/star/search
 
 to do
 
@@ -275,4 +281,6 @@ to do
 例如广告精准投放：在京东搜索商品，cookie
 
 http://127.0.0.1:8000/star/register
+
+#### 登陆
 
