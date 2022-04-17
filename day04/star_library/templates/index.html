@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>明星</title>
+    <!-- 引入css-->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+<!--判断用户是否登录-->
+
+    <div class="user">
+        Welcome
+        <!--  显示头像-->
+        <img class="header-img" src="#" alt="">
+            <!-- 如果用户有昵称就显示昵称没有昵称显示用户名-->
+
+
+        <!-- 退出登录-->
+        <a href="#">退出登录</a>
+    </div>
+
+<div class="star_div">
+    <h1 class="lib">搜索</h1>
+    <!-- 提交到搜索页面-->
+    <form action="#" class="search" method="post">
+        <!-- csrf_token-->
+
+        <label><input type="text" placeholder="请输入你要搜索的明星" class="star" name="name"></label>
+        <!-- 判断是否有错误信息-->
+
+                <div class="msg">错误信息</div>
+
+        <!-- 判断表单里有无信息-->
+                <div class="msg">表单验证信息</div>
+
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <!-- 引入js-->
+    <script src="#" async></script>
+    <!-- 引入css-->
+	<link rel="stylesheet" type="text/css" href="#">
+</head>
+<body>
+    <div class="container right-panel-active">
+        <!-- Sign In -->
+        <div class="container__form container--signin">
+            <!-- 提交到登录页面-->
+            <form action="#" class="form" id="form2" method="post">
+                <!-- csrf_token-->
+
+                <h2 class="form__title">登录</h2>
+                <label>
+                    <input type="text" placeholder="用户名/邮箱" class="input" name="username"/>
+                </label>
+                <label>
+                    <input type="password" placeholder="密码" class="input" name="password"/>
+                </label>
+                <div class="error_msg">
+                    <!-- 判断是否有msg-->
+
+                    <!-- 判断是否有登录表单验证信息-->
+
+                </div>
+                <button class="btn">登录</button>
+            </form>
+        </div>
+    
+        <!-- Overlay -->
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--left">
+                    <!-- 连接到注册页面-->
+                    <a class="btn" id="signIn" href="#">注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
