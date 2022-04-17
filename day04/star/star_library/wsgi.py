@@ -1,5 +1,5 @@
 """
-WSGI config for star project.
+WSGI config for star_library project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'star.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'star_library.settings')
 
 application = get_wsgi_application()

@@ -1,6 +1,8 @@
 from django.apps import AppConfig
 
 
-class StarLibraryConfig(AppConfig):
+class StarConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'star_library'
+    name = 'star'
+    verbose_name = "明星管理"
+
