@@ -170,6 +170,10 @@ json不能使用单引号，只能使用双引号
 
 迁移失败
 
+项目总目录是star_library,不是star
+
+难点在下午
+
 #### 操作
 
 使用新的模型：
@@ -183,4 +187,12 @@ python .\manage.py makemigrations star
 python .\manage.py migarte star
 
 python /\manage.py migrate
+
+##### 表单验证
+
+forms.py
+
+##### 样式文件
+
+浏览器有缓存，ctrl+F5，清除缓存
 

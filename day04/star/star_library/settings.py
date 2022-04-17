@@ -34,8 +34,7 @@ ALLOWED_HOSTS = []
 # SIMPLEUI_HOME_INFO = False
 
 INSTALLED_APPS = [
-    # 注册主题插件
-    # 'simpleui'
+    'simpleui'  # 注册主题插件
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

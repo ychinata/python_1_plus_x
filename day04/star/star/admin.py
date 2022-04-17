@@ -18,4 +18,3 @@ admin.site.register(UserPro, UserAdmin)
 # 修改后台管理登录的标题
 admin.site.site_tile = "star_library"
 # admin.site.site_header = "star_library"
-
