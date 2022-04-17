@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
+
 from .models import Star, UserPro
 
 
@@ -16,5 +18,4 @@ admin.site.register(Star, StarAdmin)
 admin.site.register(UserPro, UserAdmin)
 
 # 修改后台管理登录的标题
-admin.site.site_tile = "star_library"
-# admin.site.site_header = "star_library"
+admin.site.site_header = "star"

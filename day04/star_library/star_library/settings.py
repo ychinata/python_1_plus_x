@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for star_library project.
 
@@ -9,9 +10,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
-from pathlib import Path
 import os.path
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p!*%(1bce6+_+2e2q$dtba_g8r0#ai5z+un-&a6v$qz@t&msg*'
+SECRET_KEY = 'django-insecure-0h91ovd$g8d)mgnc+e4ep1@r@j-*&ik33s+7^2=@rh5k+4)z68'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,10 +31,12 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-# SIMPLEUI_HOME_INFO = False
+# 关闭插件的主页模块
+SIMPLEUI_HOME_INFO = False
 
 INSTALLED_APPS = [
-    'simpleui'  # 注册主题插件
+    # 注册主题插件
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 注册应用
-    "star.apps.StarConfig"
+    'star.apps.StarConfig',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'star.urls'
+ROOT_URLCONF = 'star_library.urls'
 
 TEMPLATES = [
     {
@@ -80,17 +82,22 @@ WSGI_APPLICATION = 'star_library.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# MySQL配置
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'star',
+        'NAME': 'star_library',
         'USER': 'root',
+        # 'PASSWORD': 'root',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': 3306
     }
 }
 
-# AUTH_USER_MODEL = "star_library.UserPro"
+# 使用自定义用户模型类
+AUTH_USER_MODEL = "star.UserPro"
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -114,9 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -129,10 +136,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# 配置静态文件的目录
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
+# 配置资源保存的目录
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

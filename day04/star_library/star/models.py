@@ -1,27 +1,25 @@
-from django.db import models
-from django.contrib.auth.models import AbstractUser
+# -*- coding: utf-8 -*-
 from datetime import datetime
 
+from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
 
-# 元组
 GENDER_CHOICES = (
     ("male", "男"),
     ("female", "女")
 )
 
 
-# 基类
 class BaseModel(models.Model):
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
     class Meta:
-        # 如果不想让模块生成数据表，就定义为抽象模型类
+        # 如果我们不想让模型生成数据表，就把他定义为一个抽象模型类
         abstract = True
 
 
-# 继承了新的AbstractUser
+# Create your models here.
 class UserPro(AbstractUser):
     nickname = models.CharField(max_length=50, default="", verbose_name="昵称")
     birthday = models.DateField(null=True, blank=True, verbose_name="生日")
@@ -42,8 +40,7 @@ class Star(BaseModel):
     name = models.CharField(max_length=20, verbose_name="姓名")
     age = models.IntegerField(verbose_name="年龄")
     sex = models.CharField(max_length=10, verbose_name="性别")
-    avatar = models.ImageField(upload_to="images/", verbose_name="明星头像")
-    # 个人简介比较长，用TextField
+    avatar = models.ImageField(upload_to="images/", verbose_name="头像")
     personal = models.TextField(verbose_name="个人简介")
     profession = models.CharField(max_length=50, verbose_name="职业")
 
@@ -53,5 +50,3 @@ class Star(BaseModel):
 
     def __str__(self):
         return self.name
-
-

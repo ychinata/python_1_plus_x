@@ -176,17 +176,51 @@ json不能使用单引号，只能使用双引号
 
 #### 操作
 
+##### 创建工程
+
+django-admin startproject star_library
+
+成功运行Django！
+
+##### 创建子应用
+
+python manage.py startapp star
+
 使用新的模型：
 
 ```python
 from django.contrib.auth.models import AbstractUser
 ```
 
+##### 迁移工程
+
 python .\manage.py makemigrations star
 
-python .\manage.py migarte star
+![09](data\09.png)
 
-python /\manage.py migrate
+python .\manage.py migrate star
+
+![10](data\10.png)
+
+python .\manage.py migrate
+
+![11](data\11.png)
+
+##### 创建管理员
+
+http://127.0.0.1:8000/admin/login/?next=/admin/
+
+![13](data\13.png)
+
+python manage.py createsuperuser
+
+用户名设置为admin, admin@admin.com 密码：123456
+
+![14](data\14.png)
+
+登陆成功
+
+![15](data\15.png)
 
 ##### 表单验证
 
@@ -195,4 +229,22 @@ forms.py
 ##### 样式文件
 
 浏览器有缓存，ctrl+F5，清除缓存
+
+早上的结果：
+
+![16](data\16.png)
+
+![12](data\12.png)
+
+
+
+## 下午
+
+### 操作
+
+#### 搜索操作
+
+to do
+
+#### 注册
 
