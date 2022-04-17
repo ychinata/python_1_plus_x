@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -6,17 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注册</title>
     <!-- 引入js-->
-    <script src="#" async type="text/javascript"></script>
+    <script src="{% static 'js/index.js' %}" async type="text/javascript"></script>
     <!-- 引入css-->
-	<link rel="stylesheet" type="text/css" href="#">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 </head>
 <body>
     <div class="container right-panel-active">
         <!-- Sign Up -->
         <div class="container__form container--signup">
             <!-- 提交到注册页面-->
-            <form action="#" class="form" id="form1" method="post">
+            <form action="{% url 'star:register' %}" class="form" id="form1" method="post">
                 <!--  csrf_token-->
+                {% csrf_token %}
                 <h2 class="form__title">注册</h2>
                 <label>
                     <input type="text" placeholder="用户名" class="input" name="nickname"/>
@@ -29,7 +31,7 @@
                 </label>
                 <div class="error_msg">
                     <!-- 判断是否有登录表单验证信息-->
-                    {% if register_post_form.erros %}
+                    {% if register_post_form.errors %}
                         {% for key, error in register_post_form.errors.items %}
                             {{ error }}
                         {% endfor %}

@@ -206,6 +206,10 @@ python .\manage.py migrate
 
 ![11](data\11.png)
 
+遇到Django 异常码1146，则需要重新执行以上三句命令，可以解决：
+
+![17](data\17.png)
+
 ##### 创建管理员
 
 http://127.0.0.1:8000/admin/login/?next=/admin/
@@ -219,6 +223,8 @@ python manage.py createsuperuser
 ![14](data\14.png)
 
 登陆成功
+
+http://127.0.0.1:8000/admin
 
 ![15](data\15.png)
 
@@ -264,9 +270,11 @@ forms.py
 
 15：28-16：24：用户登录。
 
+16：35：17：00 项目完成
 
+### 问题
 
-
+csrf 问题
 
 ### 操作
 
@@ -282,5 +290,17 @@ to do
 
 http://127.0.0.1:8000/star/register
 
+![19](data\19.png)
+
+小白
+
+xiaobai@star.com
+
+注册成功
+
+![20](data\20.png)
+
 #### 登陆
+
+![18](data\18.png)
 

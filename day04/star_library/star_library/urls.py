@@ -16,10 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
+from django.views.static import serve
+from star_library.settings import MEDIA_ROOT
 
 from star import views
 
 urlpatterns = [
+    # 访问资源media资源的url
+    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": MEDIA_ROOT}),
     path('admin/', admin.site.urls),
     # 路由分发
     path('star/', include("star.urls", namespace="star")),

@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Star, UserPro
+from .models import UserPro
 
 
 class SearchForm(forms.Form):
@@ -21,6 +21,12 @@ class RegisterForm(forms.Form):
             raise forms.ValidationError("该邮箱已被注册")
         return email
 
+    def clean_nickname(self):
+        nickname = self.data.get("nickname")
+        user = UserPro.objects.filter(nickname=nickname)
+        if user:
+            raise forms.ValidationError("该昵称已被使用")
+        return nickname
 
 class LoginForm(forms.Form):
     # 校验用户名或者邮箱

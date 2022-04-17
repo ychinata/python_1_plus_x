@@ -97,6 +97,10 @@ DATABASES = {
 
 # 使用自定义用户模型类
 AUTH_USER_MODEL = "star.UserPro"
+# 配置使用自定义用户验证类
+AUTHENTICATION_BACKENDS = [
+    "star.views.CustomAuth"
+]
 
 
 # Password validation
