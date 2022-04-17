@@ -2,9 +2,13 @@
 from django.shortcuts import render
 from django.views.generic.base import View
 from django.contrib import messages
+from django.contrib.auth import login
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from .forms import SearchForm
 from .models import Star
+from .models import Star, UserPro
 
 
 # Create your views here.
@@ -28,3 +32,31 @@ class SearchView(View):
         return render(request, "index.html", {
             "search_form": search_form
         })
+
+
+class RegisterView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "register.html")
+
+    def post(self, request, *args, **kwargs):
+        register_form = RegisterView(request.POST)
+        if register_form.is_valid():
+            nickname = register_form.cleaned_data["nickname"]
+            email = register_form.cleaned_data["email"]
+            # 获取密码
+            password = register_form.cleaned_data["password"]
+            # 实例化一个用户对象
+            user = UserPro(username=email)
+            # 把加密后的密码设置给对象
+            user.set_password(password)
+            # 邮箱
+            user.email = email
+            user.nickname = nickname
+            user.save()
+            # 使用django提供的登录方式
+            login(request, user)
+            return HttpResponseRedirect(reverse("star:search"))
+        else:
+            return render(request, "register.html", {
+                "register_post_form": register_form
+            })

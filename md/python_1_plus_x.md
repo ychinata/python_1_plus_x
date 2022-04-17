@@ -222,6 +222,24 @@ python manage.py createsuperuser
 
 ![15](data\15.png)
 
+##### 连接数据库
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'star_library',
+        'USER': 'root',
+        # 'PASSWORD': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': 3306
+    }
+}
+```
+
+
+
 ##### 表单验证
 
 forms.py
@@ -240,6 +258,12 @@ forms.py
 
 ## 下午
 
+### 进度
+
+2：00-15：18：讲到用户注册，并演示成功。修改index.html，新增class RegisterView(View)，
+
+
+
 ### 操作
 
 #### 搜索操作
@@ -247,4 +271,8 @@ forms.py
 to do
 
 #### 注册
+
+例如广告精准投放：在京东搜索商品，cookie
+
+http://127.0.0.1:8000/star/register
 

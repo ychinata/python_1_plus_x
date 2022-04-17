@@ -6,4 +6,5 @@ app_name = "star"
 
 urlpatterns = [
     path(r"search", views.SearchView.as_view(), name="search"),
+    path(r"register", views.RegisterView.as_view(), name="register"),
 ]
