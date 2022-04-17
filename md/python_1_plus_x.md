@@ -162,3 +162,13 @@ http://127.0.0.1:8000/courses/index/1/2
 
 json不能使用单引号，只能使用双引号
 
+# day04
+
+## 上午
+
+使用新的模型：
+
+```python
+from django.contrib.auth.models import AbstractUser
+```
+
