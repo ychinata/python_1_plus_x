@@ -44,6 +44,16 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple django==3.2.8
 
 ### 进度
 
+9：00-10：05：花了较多时间讲为什么用Django，MVC模式。以及启动第一个Django。
+
+10:15-12:00：讲解Django和mysql
+
+14：00-15：15需要重新听讲（在手机端等于没听）1.6 视图及URL
+
+15：22-15：30：休息
+
+15：30：1.7 ORM数据库操作
+
 1.3 创建项目
 
 1.4 定义模型
@@ -193,6 +203,8 @@ from django.contrib.auth.models import AbstractUser
 ```
 
 ##### 迁移工程
+
+*为什么这里要执行3句？而day03的例子只执行2句，而且命令还不同？*
 
 python .\manage.py makemigrations star
 
