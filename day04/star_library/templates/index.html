@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>明星</title>
+    <!-- 引入css-->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+<!--判断用户是否登录-->
+{% if request.user.is_authenticated %}
+    <div class="user">
+        Welcome
+        <!--  显示头像-->
+        <img class="header-img" src="{{ MEDIA_URL }}{{ request.user.image }}" alt="">
+        <!-- 如果用户有昵称就显示昵称没有昵称显示用户名-->
+        {% if request.user.nickname %}
+            {{ request.user.nickname }}
+        {% else %}
+            {{ request.user.username }}
+        {% endif %}
+
+        <!-- 退出登录-->
+        <a href="{% url 'star:logout' %}">退出登录</a>
+    </div>
+{% endif %}
+
+<div class="star_div">
+    <h1 class="lib">搜索</h1>
+    <!-- 提交到搜索页面-->
+    <form action="{% url 'star:search' %}" class="search" method="post">
+        <!-- csrf_token-->
+        {% csrf_token %}
+        <label><input type="text" placeholder="请输入你要搜索的明星" class="star" name="name"></label>
+        <!-- 判断是否有错误信息-->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="msg">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        <!-- 判断表单里有无信息-->
+            {% if search_form.errors %}
+                {% for key, error in search_form.errors.items %}
+                    <div class="msg">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+    </form>
+</div>
+</body>
+</html>

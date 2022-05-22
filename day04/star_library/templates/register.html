@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <!-- 引入js-->
+    <script src="{% static 'js/index.js' %}" async type="text/javascript"></script>
+    <!-- 引入css-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container right-panel-active">
+        <!-- Sign Up -->
+        <div class="container__form container--signup">
+            <!-- 提交到注册页面-->
+            <form action="{% url 'star:register' %}" class="form" id="form1" method="post">
+                <!--  csrf_token-->
+                {% csrf_token %}
+                <h2 class="form__title">注册</h2>
+                <label>
+                    <input type="text" placeholder="用户名" class="input" name="nickname"/>
+                </label>
+                <label>
+                    <input type="email" placeholder="邮箱" class="input" name="email"/>
+                </label>
+                <label>
+                    <input type="password" placeholder="密码" class="input" name="password" />
+                </label>
+                <div class="error_msg">
+                    <!-- 判断是否有登录表单验证信息-->
+                    {% if register_post_form.errors %}
+                        {% for key, error in register_post_form.errors.items %}
+                            {{ error }}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <button class="btn">注册</button>
+            </form>
+        </div>
+
+        <!-- Overlay -->
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--left">
+                    <!-- 连接到注册页面-->
+                    <a class="btn" id="signIn" href="{% url 'star:login' %}">登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

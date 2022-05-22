@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>明星个人资料</title>
+    <!-- 引入css-->
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+</head>
+<body>
+<div class="star_div">
+    <div>
+        <!-- 显示头像-->
+        <img src="{{ MEDIA_URL }}{{ star.avatar }}" alt="">
+        <div class="right">
+        <!-- 显示明星信息-->
+            <div>姓名：{{ star.name }}</div>
+            <div>年龄：{{ star.age }}</div>
+            <div>性别：{{ star.sex }}</div>
+            <div>职业：{{ star.profession }}</div>
+        </div>
+    </div>
+    <div>
+        <h3>个人简介：</h3>
+        <p class="info">{{ star.personal }}</p>
+    </div>
+
+
+</div>
+</body>
+</html>
