@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <style>
+        #box{
+            width:1000px;
+            height:600px;
+            border:1px solid #B91720;
+            margin:100px auto;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+//数组
+    var name_list = ["衬衣","牛仔裤","鞋"];
+    var price_list = [156.1,123,231];
+//初始化图库
+    var mybox = echarts.init(document.getElementById("box"));
+//开始绘图
+
+    var option = {
+        title:{
+          text:"服装价格"
+        },
+        xAxis:{   // x轴数据
+            data:name_list
+        },
+        yAxis:{},
+        series:[
+            {
+                name:"价格", // 名称
+                type:"bar", // 柱状图 bar,line
+                data:price_list //
+            },
+            {
+                name:"价格", // 名称
+                type:"line", // 柱状图 bar,line
+                data:price_list //
+            }
+        ]
+    };
+     mybox.setOption(option);
+</script>
+</html>
