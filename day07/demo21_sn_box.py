@@ -1,11 +1,12 @@
-
 import seaborn as sn
 import matplotlib.pyplot as mp
+
+# 2022.6.23
 
 mp.rcParams['font.sans-serif'] = ['SimHei']
 
 
-with open('../data/house.csv') as f:
+with open('data/house.csv') as f:
     districts, prices, floors = [], [], []
 
     for i, line in enumerate(f):

@@ -1,6 +1,8 @@
 import matplotlib.pyplot as mp
 import matplotlib.gridspec as mg
 
+# 2022.6.21
+
 mp.figure("Grid")
 gs = mg.GridSpec(3, 3)
 # 画第一个子图

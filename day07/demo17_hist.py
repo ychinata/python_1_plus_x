@@ -1,5 +1,6 @@
-
 import matplotlib.pyplot as mp
+
+# 2022.6.23
 
 # 设置支持中文字体,字体样式为黑体
 mp.rcParams['font.sans-serif'] = ['SimHei']

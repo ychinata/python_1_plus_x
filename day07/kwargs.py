@@ -5,6 +5,6 @@ def fun(a=1, **kwargs):
 
 
 # fun()
-# fun(a=10, b=5)
+fun(a=10, b=5)
 # fun(a=10, b=5, c=6, d=7)
-fun(20)
+# fun(20)

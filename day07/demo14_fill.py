@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as mp
 
-# 2022.6.21
+# 2022.6.23
 
 # x坐标
 x = np.linspace(0, 8*np.pi, 1000)

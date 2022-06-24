@@ -1,6 +1,6 @@
-
 """
 绘制每个区的均价折线图
+2022.6.23
 """
 import seaborn as sn
 import matplotlib.pyplot as mp
@@ -8,7 +8,7 @@ import random
 
 mp.rcParams['font.sans-serif'] = ['SimHei']
 # 读取数据
-with open('../data/house1.csv', encoding='utf-8') as f:
+with open('data/house1.csv', encoding='utf-8') as f:
     # 每个区房屋总价的字典
     price_dic = {}
     # 每个区房屋数量的字典

@@ -1,10 +1,11 @@
-
 import seaborn as sn
 import matplotlib.pyplot as mp
 
+# 2022.6.23
+
 mp.rcParams['font.sans-serif'] = ['SimHei']
 
-with open('../data/house1.csv', encoding='utf-8') as f:
+with open('data/house1.csv', encoding='utf-8') as f:
     sizes = []
     for i, line in enumerate(f):
         if i == 0:

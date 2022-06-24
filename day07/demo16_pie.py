@@ -1,5 +1,6 @@
-
 import matplotlib.pyplot as mp
+
+# 2022.6.23
 
 # 值
 values = [15, 23, 18, 12, 20]
@@ -13,5 +14,6 @@ colors = ['lightgreen', 'cyan', 'dodgerblue', 'deeppink', 'violet']
 # mp.pie(x=values, explode=spaces, labels=labels, colors=colors, autopct='%d%%', shadow=False)
 # 绘制饼图，保留原值
 total_values = sum(values)
-mp.pie(x=values, explode=spaces, labels=labels, colors=colors, autopct=lambda x: round(x/100*total_values), shadow=True)
+mp.pie(x=values, explode=spaces, labels=labels, colors=colors, autopct=lambda x: round(x/100*total_values),
+       shadow=True)
 mp.show()

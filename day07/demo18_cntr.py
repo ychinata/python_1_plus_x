@@ -1,6 +1,7 @@
-
 import numpy as np
 import matplotlib.pyplot as mp
+
+# 2022.6.23
 
 n = 1000
 # 得到xy坐标
@@ -19,6 +20,6 @@ mp.grid(linestyle=':')
 mp.contourf(x, y, z, 20, cmap='jet')
 # 等高线，20阶，颜色黑色，线宽0.5
 contr = mp.contour(x, y, z, 20, colors='black', linewidth=0.5)
-# 为登高线添加标签，inline_spacing表示断头线宽度,fmt为格式
+# 为等高线添加标签，inline_spacing表示断头线宽度,fmt为格式
 mp.clabel(contr, inline_spacing=0.6, fmt='%.1f', fontsize=8)
 mp.show()
