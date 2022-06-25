@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>天气情况</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="a575ddd95ead462ca2d5cd33ff02fb3c" class="chart-container" style="width:100%; height:800px;"></div>
+    <script>
+        var chart_a575ddd95ead462ca2d5cd33ff02fb3c = echarts.init(
+            document.getElementById('a575ddd95ead462ca2d5cd33ff02fb3c'), 'white', {renderer: 'canvas'});
+        var option_a575ddd95ead462ca2d5cd33ff02fb3c = {
+    "backgroundColor": new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'dodgerblue'},{offset:1,color:'cyan'}]),
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u5929\u6c14",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u591a\u4e91",
+                    "value": 380372
+                },
+                {
+                    "name": "\u6674",
+                    "value": 337053
+                },
+                {
+                    "name": "\u9634",
+                    "value": 108457
+                },
+                {
+                    "name": "\u5c0f\u96e8",
+                    "value": 63463
+                },
+                {
+                    "name": "\u6674\u8f6c\u591a\u4e91",
+                    "value": 50789
+                },
+                {
+                    "name": "\u9635\u96e8",
+                    "value": 34622
+                },
+                {
+                    "name": "\u591a\u4e91\u8f6c\u6674",
+                    "value": 28485
+                },
+                {
+                    "name": "\u6674~\u591a\u4e91",
+                    "value": 19036
+                },
+                {
+                    "name": "\u9634\u8f6c\u591a\u4e91",
+                    "value": 17629
+                },
+                {
+                    "name": "\u591a\u4e91~\u6674",
+                    "value": 15382
+                }
+            ],
+            "radius": [
+                "20%",
+                "40%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "roseType": "radius",
+            "label": {
+                "show": true,
+                "position": "outside",
+                "margin": 8,
+                "formatter": "{a|{a}}{abg|}\n{hr|}\n{b|{b}:}{c} {per|{d}%}",
+                "backgroundColor": "#b0eef9",
+                "borderColor": "#aaa",
+                "borderWidth": 1,
+                "borderRadius": 5,
+                "rich": {
+                    "a": {
+                        "color": "blue",
+                        "lineHeight": 20,
+                        "align": "center",
+                        "fontsize": 10
+                    },
+                    "abg": {
+                        "backgroundColor": "#7fcee4",
+                        "width": "100%",
+                        "align": "right",
+                        "height": 20,
+                        "borderRadius": [
+                            4,
+                            4,
+                            0,
+                            0
+                        ]
+                    },
+                    "hr": {
+                        "borderColor": "black",
+                        "width": "100%",
+                        "borderWidth": 0.2,
+                        "height": 0
+                    },
+                    "b": {
+                        "fontsize": 12,
+                        "lineHeight": 25
+                    },
+                    "per": {
+                        "color": "violet",
+                        "backgroundColor": "#334455",
+                        "padding": [
+                            2,
+                            3
+                        ],
+                        "borderRadius": 2
+                    }
+                }
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u591a\u4e91",
+                "\u6674",
+                "\u9634",
+                "\u5c0f\u96e8",
+                "\u6674\u8f6c\u591a\u4e91",
+                "\u9635\u96e8",
+                "\u591a\u4e91\u8f6c\u6674",
+                "\u6674~\u591a\u4e91",
+                "\u9634\u8f6c\u591a\u4e91",
+                "\u591a\u4e91~\u6674"
+            ],
+            "selected": {},
+            "show": false,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u5929\u6c14\u60c5\u51b5",
+            "left": "center",
+            "top": "1%",
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#fff"
+            }
+        }
+    ]
+};
+        chart_a575ddd95ead462ca2d5cd33ff02fb3c.setOption(option_a575ddd95ead462ca2d5cd33ff02fb3c);
+            window.addEventListener('resize', function(){
+                chart_a575ddd95ead462ca2d5cd33ff02fb3c.resize();
+            })
+    </script>
+</body>
+</html>
