@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'tencentdb',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': '',
         'PORT': 3306
     }
 }
