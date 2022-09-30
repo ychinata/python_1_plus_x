@@ -1,6 +1,5 @@
-
 import numpy as np
-
+# reviewed:2022.9.29
 
 # 定义一个标量函数，计算和、差、积
 def foo(x, y):

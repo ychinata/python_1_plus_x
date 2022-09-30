@@ -76,6 +76,7 @@ if len(dates) > 0:
     mp.plot(dates, profits, c='lightgray', label='Profit')
     # 绘制平均收益率水平线
     mp.axhline(y=profits.mean(), linestyle='--', color='gray')
+
 # 如果盈利收益天数大于0，绘制盈利收益情况
 if len(gain_dates) > 0:
     # 转换日期类型
@@ -84,6 +85,7 @@ if len(gain_dates) > 0:
     mp.plot(gain_dates, gain_profits, 'o', c='orangered', label='Gain Profit')
     # 绘制平均盈利收益率水平线
     mp.axhline(y=gain_profits.mean(), linestyle='--', color='orangered')
+
 # 如果亏损收益天数大于0
 if len(loss_dates) > 0:
     # 转换日期类型
@@ -92,6 +94,7 @@ if len(loss_dates) > 0:
     mp.plot(loss_dates, loss_profits, 'o', c='limegreen', label='Loss Profit')
     # 绘制平均亏损收益水平线
     mp.axhline(y=loss_profits.mean(), linestyle='--', color='limegreen')
+
 # 显示图例
 mp.legend()
 # 自动调整x轴

@@ -1,5 +1,5 @@
-
 import numpy as np
+# reviewed:2022.9.29
 
 # arange创建
 a = np.arange(10)
@@ -14,7 +14,7 @@ b = np.array([[1, 2, 3], [4, 5, 6]])
 print(b)
 b = np.array([1, 0, 1], dtype=bool)
 print(b)
-# linspace创建
+# line space创建
 c = np.linspace(1, 100, 100)
 print(c)
 c = np.linspace(1, 100, 100, dtype=int)

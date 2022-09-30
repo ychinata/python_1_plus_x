@@ -1,5 +1,5 @@
-
 import numpy as np
+# reviewed:2022.9.29
 
 # 布尔型
 a = np.array([1, 0], dtype=np.bool_)

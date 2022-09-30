@@ -4,6 +4,7 @@
 """
 import time
 import numpy as np
+# reviewed:2022.9.29
 
 n = 999999
 # 开始时间
@@ -26,3 +27,6 @@ C = A + B
 end = time.time()
 print("NumPy所花的时间为:%s" % (end - start))
 # print(C)
+
+# Python所花的时间为:1.2234580516815186
+# NumPy所花的时间为:0.05197596549987793

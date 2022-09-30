@@ -1,5 +1,5 @@
-
 import numpy as np
+# reviewed:2022.9.29
 
 # 被卷积序列
 a = np.array([1, 2, 3, 4, 5])

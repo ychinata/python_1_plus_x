@@ -1,5 +1,5 @@
-
 import numpy as np
+# reviewed:2022.9.29
 
 # 创建数组[2, 3, 4]
 a = np.arange(24).reshape(2, 3, 4)
@@ -19,4 +19,5 @@ print(a + d)
 # 创建数组[2]
 e = np.array([1, 2])
 print(e)
-print(a + e)
+# 报错
+# print(a + e)

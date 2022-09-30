@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as mp
 import matplotlib.dates as md
+# reviewed:2022.9.29
 
 
 def dmy2ymd(dmy):
@@ -14,7 +15,7 @@ def dmy2ymd(dmy):
 # 读取数据
 dates, opening_prices, hightest_prices, lowest_prices, closing_prices = np.loadtxt(
     './data/aapl.csv', dtype='M8[D],f8,f8,f8,f8', delimiter=',', usecols=(1, 3, 4, 5, 6),
-    unpack=True,converters={1: dmy2ymd})
+    unpack=True, converters={1: dmy2ymd})
 print(dates)
 print(opening_prices)
 print(hightest_prices)

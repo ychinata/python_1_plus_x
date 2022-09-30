@@ -1,5 +1,5 @@
-
 import numpy as np
+# reviewed:2022.9.29
 
 # 创建数组
 a = np.arange(12)

@@ -1,5 +1,5 @@
-
 import numpy as np
+# reviewed:2022.9.29
 
 # 一维数组的索引
 a = np.arange(10)

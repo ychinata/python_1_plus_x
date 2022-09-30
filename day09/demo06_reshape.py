@@ -1,5 +1,5 @@
-
 import numpy as np
+# reviewed:2022.9.29
 
 a = np.arange(12)
 print(a)
