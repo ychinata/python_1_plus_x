@@ -66,9 +66,21 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple django==3.2.8
 
 
 
-django-admin startproject zhonghui 
+**django-admin startproject zhonghui **
 
-python manage.py runserver
+python3 中[django](https://so.csdn.net/so/search?q=django&spm=1001.2101.3001.7020)连接mysql使用的包是pymysql, 所以第一步先安装 pymysql
+`pip install pymysql`, 安装了并不代表就可以了， 还需要在项目的proj/pooj/\__init__.py中添加
+
+```python
+import pymysql
+pymysql.install_as_MySQLdb()
+```
+
+**Navicat 创建数据库**
+
+否则Django无法连接mysql数据库，启动会报错
+
+**python manage.py runserver**
 
 成功运行Django！
 
