@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+#pip3 install matplotlib -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 # 2022.11.29
 
 fig = plt.figure()

@@ -13,6 +13,8 @@ import numpy
 # import pylab
 import matplotlib.pyplot as pylab
 import math
+# import matplotlib
+# matplotlib.usr(“TkAgg”)
 
 # 图像上显示中文
 pylab.rcParams['font.sans-serif'] = ['SimHei']
